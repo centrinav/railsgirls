@@ -13,9 +13,12 @@
  	<div class="col-md-3">
  	 <strong>Picture:</strong>
 	</div>
-  	<%= image_tag(@idea.picture_url, :width => 600) if @idea.picture.present? %>
+
+	<div>
+  		<%= image_tag(@idea.picture_url, :width => 600) if @idea.picture.present? %>
+	</div>
+	 
   </div>
 </p>
 
-<%= link_to 'Edit', edit_idea_path(@idea) %> |
-<%= link_to 'Back', ideas_path %>
+<%= commontator_thread(@idea) %>

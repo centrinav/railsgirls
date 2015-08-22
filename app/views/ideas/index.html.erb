@@ -17,8 +17,13 @@
         <td><%= idea.description %></td>
         <td><%= idea.picture %></td>
         <td><%= link_to 'Show', idea, class:'btn btn-success' %></td>
-        <td><%= link_to 'Edit', edit_idea_path(idea), class:'btn btn-info' %></td>
-        <td><%= link_to 'Destroy', idea, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger' %></td>
+        <% if current_user and current_user.ideas.include? idea %>
+          <td><%= link_to 'Edit', edit_idea_path(idea), class:'btn btn-info' %></td>
+          <td><%= link_to 'Destroy', idea, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger' %></td>
+        <% else %>
+          <td></td>
+          <td></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

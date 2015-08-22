@@ -40,3 +40,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
 gem 'carrierwave'
 gem 'devise'
+
+gem 'commontator', '~> 4.10.0'
+
+gem 'acts_as_votable', '~> 0.10.0'
